@@ -1,0 +1,55 @@
+---
+apiVersion: rbac.yaml.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cert-manager.io
+  resources:
+  - certificaterequests
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cert-manager.io
+  resources:
+  - certificaterequests/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - cert.dana.io
+  resources:
+  - clusterissuers
+  - issuers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cert.dana.io
+  resources:
+  - clusterissuers/status
+  - issuers/status
+  verbs:
+  - get
+  - patch
+  - update
