@@ -68,7 +68,7 @@ spec:
         - {{ . }}
       {{- end }}
     subjectAltNamesRestrictions:
-      allowDNSNames: {{ .Values.issuer.certificateRestrictions.subjectAltNamesRestrictions.allowDnsNames }}
+      allowDNSNames: {{ .Values.issuer.certificateRestrictions.subjectAltNamesRestrictions.allowDNSNames }}
       allowIPAddresses: {{ .Values.issuer.certificateRestrictions.subjectAltNamesRestrictions.allowIPAddresses }}
       allowAllowedURISANs: {{ .Values.issuer.certificateRestrictions.subjectAltNamesRestrictions.allowAllowedURISANs }}
       allowAllowedEmailSANs: {{ .Values.issuer.certificateRestrictions.subjectAltNamesRestrictions.allowAllowedEmailSANs }}
