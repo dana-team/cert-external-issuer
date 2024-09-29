@@ -144,6 +144,8 @@ approver:
 
 # -- Configuration for the default secret used by issuers.
 issuerSecret:
+  # -- Whether the secret is managed by the issuer or not. If this is false, the secret will not be created.
+  managed: false
   # -- Default secret name.
   name: cert-secret
   # -- Default secret namespace.
