@@ -3,7 +3,7 @@ module github.com/dana-team/cert-external-issuer
 go 1.22.2
 
 require (
-	github.com/cert-manager/cert-manager v1.16.1
+	github.com/cert-manager/cert-manager v1.16.2
 	github.com/crossplane/crossplane-runtime v1.17.0
 	github.com/go-logr/logr v1.4.2
 	github.com/go-logr/zapr v1.3.0
