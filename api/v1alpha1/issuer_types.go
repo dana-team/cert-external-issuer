@@ -196,8 +196,8 @@ type IssuerStatus struct {
 	Conditions []metav1.Condition `json:"conditions,omitempty"`
 }
 
-//+kubebuilder:object:root=true
-//+kubebuilder:subresource:status
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 
 // Issuer is the Schema for the issuers API
 type Issuer struct {
@@ -208,7 +208,7 @@ type Issuer struct {
 	Status IssuerStatus `json:"status,omitempty"`
 }
 
-//+kubebuilder:object:root=true
+// +kubebuilder:object:root=true
 
 // IssuerList contains a list of Issuer
 type IssuerList struct {
