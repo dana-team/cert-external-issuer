@@ -20,9 +20,9 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-//+kubebuilder:object:root=true
-//+kubebuilder:subresource:status
-//+kubebuilder:resource:scope=Cluster
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:resource:scope=Cluster
 
 // ClusterIssuer is the Schema for the clusterissuers API
 type ClusterIssuer struct {
@@ -33,7 +33,7 @@ type ClusterIssuer struct {
 	Status IssuerStatus `json:"status,omitempty"`
 }
 
-//+kubebuilder:object:root=true
+// +kubebuilder:object:root=true
 
 // ClusterIssuerList contains a list of ClusterIssuer
 type ClusterIssuerList struct {

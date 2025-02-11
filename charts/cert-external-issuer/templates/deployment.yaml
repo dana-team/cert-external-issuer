@@ -62,24 +62,7 @@ spec:
             - containerPort: {{ .Values.manager.ports.health.containerPort }}
               name: {{ .Values.manager.ports.health.name }}
               protocol: {{ .Values.manager.ports.health.protocol }}
-        - name: kube-rbac-proxy
-          image: {{ .Values.image.kubeRbacProxy.repository }}:{{ .Values.image.kubeRbacProxy.tag }}
-          imagePullPolicy: {{ .Values.image.kubeRbacProxy.pullPolicy }}
-          args:
-          {{- range .Values.kubeRbacProxy.args }}
-          - {{ . }}
-          {{- end }}
-          securityContext:
-            {{- toYaml .Values.kubeRbacProxy.securityContext | nindent 12 }}
-          ports:
-            - containerPort: {{ .Values.kubeRbacProxy.ports.https.containerPort }}
-              protocol: {{ .Values.kubeRbacProxy.ports.https.protocol }}
-              name: {{ .Values.kubeRbacProxy.ports.https.name }}
-          resources:
-            limits:
-              cpu: {{ .Values.kubeRbacProxy.resources.limits.cpu }}
-              memory: {{ .Values.kubeRbacProxy.resources.limits.memory }}
-            requests:
-              cpu: {{ .Values.kubeRbacProxy.resources.requests.cpu }}
-              memory: {{ .Values.kubeRbacProxy.resources.requests.memory }}
+            - containerPort: {{ .Values.manager.ports.https.containerPort }}
+              name: {{ .Values.manager.ports.https.name }}
+              protocol: {{ .Values.manager.ports.https.protocol }}
       serviceAccountName: {{ include "cert-external-issuer.fullname" . }}-controller-manager
