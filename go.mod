@@ -4,7 +4,7 @@ go 1.23.4
 
 require (
 	github.com/cert-manager/cert-manager v1.17.0
-	github.com/crossplane/crossplane-runtime v1.18.0
+	github.com/crossplane/crossplane-runtime v1.19.0
 	github.com/go-logr/logr v1.4.2
 	github.com/go-logr/zapr v1.3.0
 	github.com/google/go-cmp v0.6.0
