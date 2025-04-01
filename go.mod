@@ -1,6 +1,7 @@
 module github.com/dana-team/cert-external-issuer
 
 go 1.23.4
+toolchain go1.24.1
 
 require (
 	github.com/cert-manager/cert-manager v1.17.1
@@ -15,9 +16,9 @@ require (
 	github.com/stretchr/testify v1.10.0
 	go.elastic.co/ecszap v1.0.3
 	go.uber.org/zap v1.27.0
-	k8s.io/api v0.32.2
-	k8s.io/apimachinery v0.32.2
-	k8s.io/client-go v0.32.2
+	k8s.io/api v0.32.3
+	k8s.io/apimachinery v0.32.3
+	k8s.io/client-go v0.32.3
 	k8s.io/utils v0.0.0-20241210054802-24370beab758
 	sigs.k8s.io/controller-runtime v0.20.2
 	software.sslmate.com/src/go-pkcs12 v0.5.0
