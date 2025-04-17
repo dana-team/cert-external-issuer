@@ -1,6 +1,7 @@
 module github.com/dana-team/cert-external-issuer
 
 go 1.23.4
+
 toolchain go1.24.1
 
 require (
@@ -20,7 +21,7 @@ require (
 	k8s.io/apimachinery v0.32.3
 	k8s.io/client-go v0.32.3
 	k8s.io/utils v0.0.0-20241210054802-24370beab758
-	sigs.k8s.io/controller-runtime v0.20.2
+	sigs.k8s.io/controller-runtime v0.20.4
 	software.sslmate.com/src/go-pkcs12 v0.5.0
 )
 
