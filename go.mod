@@ -5,7 +5,7 @@ go 1.24.0
 toolchain go1.24.1
 
 require (
-	github.com/cert-manager/cert-manager v1.18.2
+	github.com/cert-manager/cert-manager v1.18.5
 	github.com/crossplane/crossplane-runtime v1.20.0
 	github.com/go-logr/logr v1.4.3
 	github.com/go-logr/zapr v1.3.0
