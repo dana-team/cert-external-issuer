@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/crossplane/crossplane-runtime/pkg/test"
+	"github.com/crossplane/crossplane-runtime/v2/pkg/test"
 	httpClient "github.com/dana-team/cert-external-issuer/internal/issuer/clients/http"
 	"github.com/google/go-cmp/cmp"
 )

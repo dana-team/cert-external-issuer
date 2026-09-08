@@ -95,7 +95,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  issuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  issuerKind,
@@ -153,7 +153,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  clusterIssuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  clusterIssuerKind,
@@ -217,7 +217,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  issuerName,
 							Group: foreignIssuer,
 						}),
@@ -232,7 +232,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  issuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  issuerKind,
@@ -256,7 +256,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  issuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  issuerKind,
@@ -280,7 +280,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  issuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  foreignKind,
@@ -308,7 +308,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  issuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  issuerKind,
@@ -337,7 +337,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  clusterIssuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  clusterIssuerKind,
@@ -366,7 +366,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  issuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  issuerKind,
@@ -411,7 +411,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  issuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  issuerKind,
@@ -459,7 +459,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  issuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  issuerKind,
@@ -518,7 +518,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  issuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  issuerKind,
@@ -577,7 +577,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestName,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  issuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  issuerKind,
@@ -631,7 +631,7 @@ func TestReconcile(t *testing.T) {
 					cmgen.CertificateRequest(
 						certificateRequestNS,
 						cmgen.SetCertificateRequestNamespace(certificateRequestNS),
-						cmgen.SetCertificateRequestIssuer(cmmeta.ObjectReference{
+						cmgen.SetCertificateRequestIssuer(cmmeta.IssuerReference{
 							Name:  issuerName,
 							Group: certv1alpha1.GroupVersion.Group,
 							Kind:  issuerKind,
