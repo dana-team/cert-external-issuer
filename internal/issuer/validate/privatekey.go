@@ -43,9 +43,9 @@ func validateKeySize(csr *x509.CertificateRequest, allowedPrivateKeySizes []int)
 	case *rsa.PublicKey:
 		publicKeySize = pub.Size() * byteSize
 	case *ecdsa.PublicKey:
-		publicKeySize = pub.Curve.Params().BitSize / 8
+		publicKeySize = pub.Curve.Params().BitSize
 	case *ed25519.PublicKey:
-		publicKeySize = 32
+		publicKeySize = ed25519.PublicKeySize * byteSize
 	default:
 		return fmt.Errorf("unidentified key type")
 	}

@@ -116,6 +116,42 @@ func TestValidateKeySize(t *testing.T) {
 				errMsg: fmt.Sprintf(errAllowedValuesIntMsg, ".spec.privateKey.size", []int{1024, 4096}),
 			},
 		},
+		"ShouldSucceedWithValidECDSAKeySize": {
+			params: params{
+				algorithm:              cmapi.ECDSAKeyAlgorithm,
+				allowedPrivateKeySizes: []int{256, 384},
+			},
+			want: want{
+				errMsg: "",
+			},
+		},
+		"ShouldFailWithInvalidECDSAKeySize": {
+			params: params{
+				algorithm:              cmapi.ECDSAKeyAlgorithm,
+				allowedPrivateKeySizes: []int{384, 521},
+			},
+			want: want{
+				errMsg: fmt.Sprintf(errAllowedValuesIntMsg, ".spec.privateKey.size", []int{384, 521}),
+			},
+		},
+		"ShouldSucceedWithValidEd25519KeySize": {
+			params: params{
+				algorithm:              cmapi.Ed25519KeyAlgorithm,
+				allowedPrivateKeySizes: []int{256},
+			},
+			want: want{
+				errMsg: "",
+			},
+		},
+		"ShouldFailWithInvalidEd25519KeySize": {
+			params: params{
+				algorithm:              cmapi.Ed25519KeyAlgorithm,
+				allowedPrivateKeySizes: []int{128},
+			},
+			want: want{
+				errMsg: fmt.Sprintf(errAllowedValuesIntMsg, ".spec.privateKey.size", []int{128}),
+			},
+		},
 	}
 
 	for name, test := range cases {
