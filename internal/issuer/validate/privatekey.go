@@ -20,7 +20,7 @@ func validateKeyType(csr *x509.CertificateRequest, allowedPrivateKeyAlgorithms [
 		keyType = cmapi.RSAKeyAlgorithm
 	case *ecdsa.PublicKey:
 		keyType = cmapi.ECDSAKeyAlgorithm
-	case *ed25519.PublicKey:
+	case ed25519.PublicKey:
 		keyType = cmapi.Ed25519KeyAlgorithm
 	default:
 		return fmt.Errorf("unidentified key type")
@@ -38,7 +38,18 @@ func validateKeySize(csr *x509.CertificateRequest, allowedPrivateKeySizes []int)
 	publicKey := csr.PublicKey
 	byteSize := 8
 
-	publicKeySize := publicKey.(*rsa.PublicKey).Size() * byteSize
+	var publicKeySize int
+	switch pub := publicKey.(type) {
+	case *rsa.PublicKey:
+		publicKeySize = pub.Size() * byteSize
+	case *ecdsa.PublicKey:
+		publicKeySize = pub.Curve.Params().BitSize
+	case ed25519.PublicKey:
+		publicKeySize = ed25519.PublicKeySize * byteSize
+	default:
+		return fmt.Errorf("unidentified key type")
+	}
+
 	if !containsInt(publicKeySize, allowedPrivateKeySizes) {
 		return fmt.Errorf(errAllowedValuesIntMsg, ".spec.privateKey.size", allowedPrivateKeySizes)
 	}

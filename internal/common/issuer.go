@@ -16,6 +16,6 @@ func GetIssuerSpecAndStatus(issuer client.Object) (*certv1alpha1.IssuerSpec, *ce
 	case *certv1alpha1.ClusterIssuer:
 		return &t.Spec, &t.Status, nil
 	default:
-		return nil, nil, fmt.Errorf("not an issuer type: %t", t)
+		return nil, nil, fmt.Errorf("not an issuer type: %T", t)
 	}
 }
